@@ -32,7 +32,7 @@ export default function Hero({ tr }) {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.4, ease: EASE }}
       >
-        Roman
+        rom433
       </motion.h1>
 
       {/* Role subtitle */}

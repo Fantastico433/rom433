@@ -1,7 +1,7 @@
 export default function Header({ lang, setLang }) {
   return (
     <header className="header">
-      <div className="header-name">Roman</div>
+      <div className="header-name">rom433</div>
       <nav className="header-lang" aria-label="Keelivalik">
         <button
           className={lang === 'et' ? 'lang-active' : ''}

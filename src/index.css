@@ -88,10 +88,11 @@ button { background: none; border: none; cursor: pointer; font-family: inherit; 
 }
 
 .hero-name {
-  font-size: clamp(4.5rem, 19vw, 21rem);
-  font-weight: 300;
-  letter-spacing: -0.025em;
-  line-height: 0.88;
+  font-family: 'Bebas Neue', var(--font);
+  font-size: clamp(5.5rem, 22vw, 26rem);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  line-height: 0.9;
   color: var(--fg);
   user-select: none;
 }

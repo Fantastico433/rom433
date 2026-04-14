@@ -24,7 +24,7 @@ export default function Footer({ tr }) {
         viewport={{ once: true }}
         transition={{ duration: 2, ease: EASE }}
       >
-        <div className="footer-name-ghost" aria-hidden="true">Roman</div>
+        <div className="footer-name-ghost" aria-hidden="true">rom433</div>
       </motion.div>
 
       <p className="footer-copy">
