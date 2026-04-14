@@ -1,134 +1,168 @@
-export const projects = [
+export const groups = [
   {
-    id: '01',
-    type: 'photo',
-    file: 'MassChallenge_London_2025.jpg',
-    title: { et: 'MassChallenge London', en: 'MassChallenge London' },
-    desc: {
-      et: 'Idufirmade koosolek Londonis. Objektiiv sai lähemalt vaadata, kuidas inimesed, kes tahavad maailma muuta, joovad kohvi ja vaatavad slaide.',
-      en: 'A startup gathering in London. The lens got a closer look at how people who want to change the world drink coffee and watch slides.',
-    },
+    id: 'masschallenge',
+    label: { et: 'MassChallenge London', en: 'MassChallenge London' },
     year: '2025',
-    category: 'photo',
+    projects: [
+      {
+        id: '01',
+        type: 'photo',
+        file: 'MassChallenge_London_2025.jpg',
+        title: { et: 'Üritusel kohapeal', en: 'On-site at the event' },
+        desc: {
+          et: 'Meie poster MassChallenge Londoni üritusel. Idufirmad, investorid, palju kohvi.',
+          en: 'Our poster at the MassChallenge London event. Startups, investors, lots of coffee.',
+        },
+        category: 'photo',
+      },
+      {
+        id: '05',
+        type: 'pdf',
+        file: 'SKYCORP A1 poster_Mass4.pdf',
+        title: { et: 'A1 Messiplakat', en: 'A1 Exhibition Poster' },
+        desc: {
+          et: 'Plakat MassChallenge messile. A1 formaat, minimaalne, aga mahukas.',
+          en: 'Poster for the MassChallenge expo. A1 format, minimal but substantial.',
+        },
+        category: 'design',
+      },
+    ],
   },
   {
-    id: '02',
-    type: 'photo',
-    file: 'PXL_20250515_092730849.jpg',
-    title: { et: 'Hetked', en: 'Moments' },
-    desc: {
-      et: 'Telefonikaamera, õige valgus, õige hetk. Mõnikord on parim kaamera see, mis käes on.',
-      en: 'Phone camera, right light, right moment. Sometimes the best camera is the one you have.',
-    },
-    year: '2025',
-    category: 'photo',
+    id: 'ssd',
+    label: { et: 'SSD mess — Tallinn', en: 'SSD Expo — Tallinn' },
+    year: '2024',
+    projects: [
+      {
+        id: '02',
+        type: 'photo',
+        file: 'PXL_20250515_092730849.jpg',
+        title: { et: 'Stand messil', en: 'Stand at the expo' },
+        desc: {
+          et: 'Meie layout eelmise aasta SSD messilt Tallinnas. Disain päriselus.',
+          en: 'Our layout from last year\'s SSD expo in Tallinn. Design in real life.',
+        },
+        category: 'photo',
+      },
+      {
+        id: '04',
+        type: 'photo',
+        file: 'Apr 26, 2025, 09_05_18 AM.png',
+        title: { et: 'Esimene renderdus', en: 'First render' },
+        desc: {
+          et: 'Esimene renderdus SSD messile. Nii see alguse sai.',
+          en: 'First render for the SSD expo. This is how it started.',
+        },
+        category: 'design',
+      },
+    ],
   },
   {
-    id: '03',
-    type: 'photo',
-    file: 'PXL_20250528_134437124.jpg',
-    title: { et: 'Hetked II', en: 'Moments II' },
-    desc: {
-      et: 'Teine hetk. Sama telefon, erinev valgus, erinev tuju.',
-      en: 'Another moment. Same phone, different light, different mood.',
-    },
+    id: 'idet',
+    label: { et: 'IDET — Brno', en: 'IDET — Brno' },
     year: '2025',
-    category: 'photo',
+    projects: [
+      {
+        id: '03',
+        type: 'photo',
+        file: 'PXL_20250528_134437124.jpg',
+        title: { et: 'Stand IDET messil', en: 'Stand at IDET expo' },
+        desc: {
+          et: 'Meie stand IDET kaitsemessil Brno. Sõjaline kontekst, tsiviilmeeskond.',
+          en: 'Our stand at the IDET defence expo in Brno. Military context, civilian team.',
+        },
+        category: 'photo',
+      },
+      {
+        id: '06',
+        type: 'pdf',
+        file: 'SKYCORP IDET design.pdf',
+        title: { et: 'Postri disain', en: 'Poster design' },
+        desc: {
+          et: 'IDET-i postri esialgne disain. Kust kõik algas.',
+          en: 'Original poster design for IDET. Where it all began.',
+        },
+        category: 'design',
+      },
+      {
+        id: '07',
+        type: 'pdf',
+        file: 'SKYCORP Rollup design.pdf',
+        title: { et: 'Rollup — edasiarendus', en: 'Rollup — iteration' },
+        desc: {
+          et: 'Eelmise postri edasiarendus rollup bänneriks. 85×200cm.',
+          en: 'Evolution of the previous poster into a roll-up banner. 85×200cm.',
+        },
+        category: 'design',
+      },
+    ],
   },
   {
-    id: '04',
-    type: 'photo',
-    file: 'Apr 26, 2025, 09_05_18 AM.png',
-    title: { et: 'Hetk', en: 'Moment' },
-    desc: {
-      et: 'Hommikune kaader. Midagi, mis tundus väärt jäädvustamist.',
-      en: 'A morning frame. Something that felt worth capturing.',
-    },
+    id: 'ukraine',
+    label: { et: 'Ukraina turg', en: 'Ukrainian market' },
     year: '2025',
-    category: 'photo',
+    projects: [
+      {
+        id: '08',
+        type: 'pdf',
+        file: 'Company profile_SKYCORP Technologies - Ukraine_v2.pdf',
+        title: { et: 'Poster väärtuspakkumisega', en: 'Value proposition poster' },
+        desc: {
+          et: 'SKYCORP Technologies\' ettevõtteprofiil Ukraina turule. Kaheksateist lehekülge.',
+          en: 'SKYCORP Technologies company profile for the Ukrainian market. Eighteen pages.',
+        },
+        category: 'design',
+      },
+    ],
   },
   {
-    id: '05',
-    type: 'pdf',
-    file: 'SKYCORP A1 poster_Mass4.pdf',
-    title: { et: 'SKYCORP — A1 Plakat', en: 'SKYCORP — A1 Poster' },
-    desc: {
-      et: 'Messiplakat SKYCORP Technologiesile. A1 formaat, palju valget ruumi, mõned tähed ja lootus, et keegi peatus lugema.',
-      en: 'Exhibition poster for SKYCORP Technologies. A1 format, lots of white space, some letters and the hope that someone stopped to read.',
-    },
+    id: 'distillery',
+    label: { et: 'Distillery', en: 'Distillery' },
     year: '2025',
-    category: 'design',
+    projects: [
+      {
+        id: '09',
+        type: 'pdf',
+        file: 'Unt_dist_lightBG.pdf',
+        title: { et: 'Logo', en: 'Logo' },
+        desc: {
+          et: 'Logo disain ühele distilleeriale. Puhas, heledal taustal.',
+          en: 'Logo design for a distillery. Clean, on a light background.',
+        },
+        category: 'design',
+      },
+    ],
   },
   {
-    id: '06',
-    type: 'pdf',
-    file: 'SKYCORP IDET design.pdf',
-    title: { et: 'SKYCORP — IDET', en: 'SKYCORP — IDET' },
-    desc: {
-      et: 'Disain IDET kaitsemessile. Sõjaline kontekst, tsiviildisainer.',
-      en: 'Design for the IDET defence expo. Military context, civilian designer.',
-    },
+    id: 'web',
+    label: { et: 'Veeb', en: 'Web' },
     year: '2025',
-    category: 'design',
-  },
-  {
-    id: '07',
-    type: 'pdf',
-    file: 'SKYCORP Rollup design.pdf',
-    title: { et: 'SKYCORP — Rollup', en: 'SKYCORP — Rollup' },
-    desc: {
-      et: '85×200cm trükitud lootus, et bränd jääb meelde. Rollup bänner messideks.',
-      en: '85×200cm of printed hope that the brand sticks. Roll-up banner for trade shows.',
-    },
-    year: '2025',
-    category: 'design',
-  },
-  {
-    id: '08',
-    type: 'pdf',
-    file: 'Company profile_SKYCORP Technologies - Ukraine_v2.pdf',
-    title: { et: 'SKYCORP — Ettevõtteprofiil', en: 'SKYCORP — Company Profile' },
-    desc: {
-      et: 'Ettevõtteprofiil Ukraina turule. Kaheksateist lehekülge põhjust, miks SKYCORP on usaldusväärne partner.',
-      en: 'Company profile for the Ukrainian market. Eighteen pages of reasons why SKYCORP is a trustworthy partner.',
-    },
-    year: '2025',
-    category: 'design',
-  },
-  {
-    id: '09',
-    type: 'pdf',
-    file: 'Unt_dist_lightBG.pdf',
-    title: { et: 'Jaotuskaart', en: 'Distribution Map' },
-    desc: {
-      et: 'Visuaalne jaotuskaart heledale taustale. Andmed, mis saavad vormi.',
-      en: 'Visual distribution map on a light background. Data that takes shape.',
-    },
-    year: '2025',
-    category: 'design',
-  },
-  {
-    id: '10',
-    type: 'pdf',
-    file: 'screencapture-aiaabc-ee-2025-04-29-09_35_14.pdf',
-    title: { et: 'aiaabc.ee', en: 'aiaabc.ee' },
-    desc: {
-      et: 'Aiaabi veebisait. Lihtsalt, puhtalt, kasulikult.',
-      en: 'Garden help website. Simple, clean, useful.',
-    },
-    year: '2025',
-    category: 'web',
-  },
-  {
-    id: '11',
-    type: 'pdf',
-    file: 'screencapture-skycorp-tech-2025-04-29-09_34_41.pdf',
-    title: { et: 'skycorp.tech', en: 'skycorp.tech' },
-    desc: {
-      et: 'SKYCORP Technologies\'i koduleht. Kõik, mida peab teadma, ühel lehel.',
-      en: 'SKYCORP Technologies website. Everything you need to know, on one page.',
-    },
-    year: '2025',
-    category: 'web',
+    projects: [
+      {
+        id: '10',
+        type: 'pdf',
+        file: 'screencapture-aiaabc-ee-2025-04-29-09_35_14.pdf',
+        title: { et: 'aiaabc.ee', en: 'aiaabc.ee' },
+        desc: {
+          et: 'Aiaabi kodulehe kuvatõmmis. Uus versioon on juba üleval.',
+          en: 'Screenshot of the garden help website. A new version is already live.',
+        },
+        category: 'web',
+      },
+      {
+        id: '11',
+        type: 'pdf',
+        file: 'screencapture-skycorp-tech-2025-04-29-09_34_41.pdf',
+        title: { et: 'skycorp.tech', en: 'skycorp.tech' },
+        desc: {
+          et: 'SKYCORP Technologies\' kodulehe kuvatõmmis.',
+          en: 'Screenshot of the SKYCORP Technologies website.',
+        },
+        category: 'web',
+      },
+    ],
   },
 ]
+
+// flat list for any component that still needs it
+export const projects = groups.flatMap(g => g.projects)
