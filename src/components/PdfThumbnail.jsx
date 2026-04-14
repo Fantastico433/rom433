@@ -21,7 +21,7 @@ export default function PdfThumbnail({ url, alt }) {
       >
         <Page
           pageNumber={1}
-          width={480}
+          width={380}
           renderTextLayer={false}
           renderAnnotationLayer={false}
         />

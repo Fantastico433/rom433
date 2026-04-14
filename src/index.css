@@ -10,8 +10,8 @@
   --muted: #525250;
   --accent: #FF3D1E;
   --font: 'Space Grotesk', system-ui, sans-serif;
-  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --pad: clamp(1.2rem, 4vw, 3rem);
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 html { scroll-behavior: smooth; }
@@ -28,9 +28,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-@media (hover: none) {
-  body { cursor: auto; }
-}
+@media (hover: none) { body { cursor: auto; } }
 
 ::selection { background: var(--fg); color: var(--bg); }
 img { display: block; max-width: 100%; }
@@ -42,7 +40,7 @@ button { background: none; border: none; cursor: none; font-family: inherit; fon
 .cursor-dot {
   position: fixed;
   top: 0; left: 0;
-  width: 6px; height: 6px;
+  width: 5px; height: 5px;
   background: var(--fg);
   border-radius: 50%;
   pointer-events: none;
@@ -53,8 +51,8 @@ button { background: none; border: none; cursor: none; font-family: inherit; fon
 .cursor-ring {
   position: fixed;
   top: 0; left: 0;
-  width: 32px; height: 32px;
-  border: 1px solid rgba(237, 236, 234, 0.35);
+  width: 28px; height: 28px;
+  border: 1px solid rgba(237, 236, 234, 0.3);
   border-radius: 50%;
   pointer-events: none;
   z-index: 9998;
@@ -70,12 +68,12 @@ button { background: none; border: none; cursor: none; font-family: inherit; fon
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.2rem var(--pad);
+  padding: 1.1rem var(--pad);
   pointer-events: none;
 }
 
 .header-name {
-  font-size: 0.65rem;
+  font-size: 0.62rem;
   font-weight: 500;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -90,7 +88,7 @@ button { background: none; border: none; cursor: none; font-family: inherit; fon
 }
 
 .header-lang button {
-  font-size: 0.65rem;
+  font-size: 0.62rem;
   font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -108,7 +106,7 @@ button { background: none; border: none; cursor: none; font-family: inherit; fon
 .hero {
   position: relative;
   height: 100dvh;
-  min-height: 560px;
+  min-height: 540px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -118,7 +116,7 @@ button { background: none; border: none; cursor: none; font-family: inherit; fon
 
 .hero-name {
   font-family: 'Bebas Neue', var(--font);
-  font-size: clamp(4.5rem, 19vw, 22rem);
+  font-size: clamp(4rem, 18vw, 21rem);
   font-weight: 400;
   letter-spacing: 0.04em;
   line-height: 0.9;
@@ -128,8 +126,8 @@ button { background: none; border: none; cursor: none; font-family: inherit; fon
 }
 
 .hero-role {
-  margin-top: 2rem;
-  font-size: clamp(0.58rem, 0.95vw, 0.8rem);
+  margin-top: 1.8rem;
+  font-size: clamp(0.55rem, 0.9vw, 0.75rem);
   font-weight: 400;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -140,7 +138,7 @@ button { background: none; border: none; cursor: none; font-family: inherit; fon
   position: absolute;
   top: 18%;
   right: var(--pad);
-  font-size: clamp(4rem, 9vw, 10rem);
+  font-size: clamp(3.5rem, 8vw, 9rem);
   font-weight: 700;
   color: var(--accent);
   line-height: 1;
@@ -155,7 +153,7 @@ button { background: none; border: none; cursor: none; font-family: inherit; fon
   width: 100%;
   height: 1px;
   background: var(--fg);
-  opacity: 0.06;
+  opacity: 0.05;
   transform-origin: left;
   pointer-events: none;
 }
@@ -167,9 +165,8 @@ button { background: none; border: none; cursor: none; font-family: inherit; fon
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.75rem;
-  font-size: 0.58rem;
-  font-weight: 400;
+  gap: 0.6rem;
+  font-size: 0.55rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--muted);
@@ -179,25 +176,25 @@ button { background: none; border: none; cursor: none; font-family: inherit; fon
 .hero-scroll-line {
   display: block;
   width: 1px;
-  height: 2.5rem;
+  height: 2.2rem;
   background: var(--muted);
   opacity: 0.4;
 }
 
-/* ─── WORK SECTION ───────────────────────────────────── */
+/* ─── WORK SECTION ────────────────────────────────────── */
 
-.work { padding-top: 7rem; }
+.work { padding-top: 6rem; }
 
 .work-label {
   padding: 0 var(--pad);
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
   display: flex;
   align-items: baseline;
-  gap: 1.5rem;
+  gap: 1.2rem;
 }
 
 .work-label-title {
-  font-size: 0.6rem;
+  font-size: 0.58rem;
   font-weight: 500;
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -205,81 +202,84 @@ button { background: none; border: none; cursor: none; font-family: inherit; fon
 }
 
 .work-label-count {
-  font-size: 0.6rem;
-  font-weight: 400;
-  letter-spacing: 0.1em;
+  font-size: 0.58rem;
   color: var(--muted);
   opacity: 0.5;
 }
 
-.project-divider {
-  height: 1px;
-  background: rgba(237, 236, 234, 0.07);
-  margin: 0 var(--pad);
+.panels {
+  border-top: 1px solid rgba(237, 236, 234, 0.07);
 }
 
-/* ─── PROJECT ITEM ───────────────────────────────────── */
+/* ─── FOLD PANEL ──────────────────────────────────────── */
 
-.project {
+.panel {
   position: relative;
-  padding: 5rem var(--pad);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  min-height: 100dvh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr auto;
+  align-items: center;
+  border-bottom: 1px solid rgba(237, 236, 234, 0.07);
   overflow: hidden;
+  padding: 5rem var(--pad);
+  gap: 3rem;
 }
 
-.project-ghost {
+/* ghost number */
+.panel-ghost {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
   font-family: 'Bebas Neue', var(--font);
-  font-size: clamp(6rem, 16vw, 20rem);
+  font-size: clamp(8rem, 20vw, 28rem);
   font-weight: 400;
   letter-spacing: 0.02em;
-  line-height: 1;
+  line-height: 0.8;
+  padding: 0.5rem 1rem;
   color: var(--fg);
-  opacity: 0.04;
+  opacity: 0.045;
   user-select: none;
   pointer-events: none;
 }
 
-/* ── Photo layout ── */
-
-.project-img-wrap {
-  width: clamp(240px, 60%, 780px);
-  overflow: hidden;
+/* perspective wrapper for fold effect */
+.panel-perspective {
+  perspective: 1200px;
+  perspective-origin: 50% 0%;
+  grid-column: 1;
+  grid-row: 1;
 }
 
-.project--even .project-img-wrap {
-  align-self: flex-end;
+.panel--even .panel-perspective {
+  grid-column: 2;
 }
 
-.project-img-wrap img {
+/* visual block — fold animates this */
+.panel-visual {
   width: 100%;
-  height: auto;
+  transform-style: preserve-3d;
+}
+
+/* photo */
+.panel-img-clip {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: #1a1a18;
+}
+
+.panel-img {
+  width: 100%;
+  height: 110%;
   object-fit: cover;
-  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  display: block;
+  will-change: transform;
 }
 
-.project-img-wrap:hover img {
-  transform: scale(1.04);
-}
-
-/* ── PDF / doc layout ── */
-
-.project--pdf {
-  min-height: 50vh;
-  overflow: visible;
-}
-
-.project-pdf-wrap {
-  width: fit-content;
-}
-
-.project--even .project-pdf-wrap {
-  align-self: flex-end;
-}
+/* ─── PDF THUMBNAIL ───────────────────────────────────── */
 
 .pdf-thumb-link { display: block; }
 
@@ -290,45 +290,43 @@ button { background: none; border: none; cursor: none; font-family: inherit; fon
   opacity: 0;
   transition:
     opacity 0.4s ease,
-    transform 0.55s cubic-bezier(0.16, 1, 0.3, 1),
-    box-shadow 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+    transform 0.55s var(--ease),
+    box-shadow 0.55s var(--ease);
   transform-origin: left top;
   box-shadow:
     0 0 0 1px rgba(237, 236, 234, 0.08),
-    0 4px 28px rgba(0, 0, 0, 0.4);
+    0 6px 32px rgba(0, 0, 0, 0.5);
 }
 
 .pdf-thumb--loaded { opacity: 1; }
 
 .pdf-thumb-link:hover .pdf-thumb {
-  transform: scale(1.26);
+  transform: scale(1.06);
   box-shadow:
-    0 0 0 1px rgba(237, 236, 234, 0.12),
-    0 28px 90px rgba(0, 0, 0, 0.6);
-  z-index: 10;
-  position: relative;
+    0 0 0 1px rgba(237, 236, 234, 0.14),
+    0 24px 80px rgba(0, 0, 0, 0.65);
 }
 
 .pdf-thumb .react-pdf__Page { display: block; }
-.pdf-thumb .react-pdf__Page canvas { display: block; }
+.pdf-thumb .react-pdf__Page canvas { display: block; max-width: 100%; height: auto !important; }
 
 .pdf-thumb__skeleton {
-  width: 420px;
-  height: 600px;
+  width: 380px;
+  height: 540px;
   background: linear-gradient(90deg, #1a1a18 25%, #222220 50%, #1a1a18 75%);
   background-size: 200% 100%;
   animation: shimmer 1.4s infinite;
 }
 
 .pdf-thumb__error {
-  width: 420px;
-  height: 600px;
+  width: 380px;
+  height: 540px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--muted);
-  font-size: 1.5rem;
-  border: 1px solid rgba(237, 236, 234, 0.08);
+  font-size: 1.2rem;
+  border: 1px solid rgba(237, 236, 234, 0.07);
 }
 
 @keyframes shimmer {
@@ -336,61 +334,77 @@ button { background: none; border: none; cursor: none; font-family: inherit; fon
   100% { background-position: -200% 0; }
 }
 
-/* ── Shared meta ── */
+/* ─── PANEL META ──────────────────────────────────────── */
 
-.project-meta-top {
+.panel-meta {
+  grid-column: 2;
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.panel--even .panel-meta {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.panel-meta-top {
   display: flex;
   align-items: center;
-  gap: 0.9rem;
+  gap: 0.75rem;
 }
 
-.project-title {
-  font-size: clamp(0.95rem, 2.4vw, 1.9rem);
-  font-weight: 400;
-  letter-spacing: -0.015em;
-  line-height: 1.2;
-}
-
-.project-category {
-  font-size: 0.58rem;
+.panel-category {
+  font-size: 0.56rem;
   font-weight: 500;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--muted);
   border: 1px solid currentColor;
-  padding: 0.2rem 0.65rem;
+  padding: 0.18rem 0.6rem;
 }
 
-.project-year {
-  font-size: 0.58rem;
-  font-weight: 400;
+.panel-year {
+  font-size: 0.56rem;
   letter-spacing: 0.1em;
   color: var(--muted);
 }
 
-.project-bottom-meta {
-  margin-top: 1.4rem;
-  display: flex;
-  align-items: baseline;
-  gap: 1rem;
-  flex-wrap: wrap;
+.panel-title {
+  font-size: clamp(1.1rem, 2.5vw, 2rem);
+  font-weight: 300;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
 }
 
-.project-open {
+.panel-desc {
+  font-size: clamp(0.75rem, 1vw, 0.88rem);
+  font-weight: 400;
+  line-height: 1.65;
+  color: var(--muted);
+  max-width: 38ch;
+}
+
+.panel-open {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  font-size: 0.65rem;
+  gap: 0.35rem;
+  font-size: 0.62rem;
   font-weight: 500;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  border-bottom: 1px solid var(--fg);
+  border-bottom: 1px solid rgba(237, 236, 234, 0.3);
   padding-bottom: 0.1rem;
-  transition: opacity 0.2s;
-  align-self: flex-start;
+  width: fit-content;
+  transition: border-color 0.2s, opacity 0.2s;
 }
 
-.project-open:hover { opacity: 0.4; }
+.panel-open:hover {
+  border-color: var(--fg);
+  opacity: 0.7;
+}
 
 /* ─── FOOTER ──────────────────────────────────────────── */
 
@@ -400,72 +414,86 @@ button { background: none; border: none; cursor: none; font-family: inherit; fon
   grid-template-columns: 1fr 1fr;
   align-items: end;
   gap: 3rem;
+  border-top: 1px solid rgba(237, 236, 234, 0.07);
 }
 
 .footer-contact-label {
-  font-size: 0.6rem;
+  font-size: 0.58rem;
   font-weight: 500;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--muted);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
 }
 
 .footer-contact-line {
-  font-size: clamp(1rem, 2.4vw, 2rem);
+  font-size: clamp(1rem, 2.2vw, 1.9rem);
   font-weight: 300;
   letter-spacing: -0.01em;
   line-height: 1.35;
-  margin-bottom: 1.75rem;
+  margin-bottom: 1.5rem;
 }
 
 .footer-email {
-  font-size: 0.78rem;
-  font-weight: 400;
+  font-size: 0.75rem;
   letter-spacing: 0.04em;
-  border-bottom: 1px solid var(--fg);
+  border-bottom: 1px solid rgba(237, 236, 234, 0.3);
   padding-bottom: 0.15rem;
   display: inline-block;
-  transition: opacity 0.2s;
+  transition: border-color 0.2s;
 }
 
-.footer-email:hover { opacity: 0.4; }
+.footer-email:hover { border-color: var(--fg); }
 
 .footer-name-ghost {
   font-family: 'Bebas Neue', var(--font);
-  font-size: clamp(3rem, 8vw, 9rem);
+  font-size: clamp(2.5rem, 7vw, 8rem);
   font-weight: 400;
   letter-spacing: 0.04em;
   line-height: 1;
-  opacity: 0.06;
+  opacity: 0.05;
   user-select: none;
   text-align: right;
 }
 
 .footer-copy {
   grid-column: 1 / -1;
-  padding-top: 1.5rem;
-  border-top: 1px solid rgba(237, 236, 234, 0.08);
-  font-size: 0.6rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(237, 236, 234, 0.07);
+  font-size: 0.58rem;
   letter-spacing: 0.08em;
   color: var(--muted);
 }
 
 /* ─── RESPONSIVE ──────────────────────────────────────── */
 
-@media (max-width: 720px) {
-  .project-img-wrap,
-  .project--even .project-img-wrap,
-  .project--even .project-pdf-wrap {
-    width: 100%;
-    align-self: initial;
-  }
-
-  .footer {
+@media (max-width: 760px) {
+  .panel {
     grid-template-columns: 1fr;
-    gap: 2.5rem;
+    grid-template-rows: auto auto;
+    min-height: auto;
+    padding: 4rem var(--pad);
+    gap: 1.75rem;
   }
 
+  .panel-perspective,
+  .panel--even .panel-perspective {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .panel-meta,
+  .panel--even .panel-meta {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .panel-ghost { font-size: clamp(5rem, 22vw, 10rem); }
+
+  .pdf-thumb__skeleton,
+  .pdf-thumb__error { width: 100%; height: 340px; }
+
+  .footer { grid-template-columns: 1fr; gap: 2rem; }
   .footer-name-ghost { text-align: left; }
   .hero-accent { display: none; }
 }

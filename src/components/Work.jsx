@@ -16,17 +16,17 @@ export default function Work({ tr, lang }) {
         <span className="work-label-count">{tr.workCount(projects.length)}</span>
       </motion.div>
 
-      {projects.map((project, i) => (
-        <div key={project.id}>
-          {i > 0 && <div className="project-divider" />}
+      <div className="panels">
+        {projects.map((project, i) => (
           <ProjectItem
+            key={project.id}
             project={project}
             tr={tr}
             lang={lang}
             isEven={i % 2 !== 0}
           />
-        </div>
-      ))}
+        ))}
+      </div>
     </section>
   )
 }
