@@ -19,18 +19,52 @@ const slideIn = (delay = 0, dir = 1) => ({
   transition: { duration: 0.7, delay, ease: EASE },
 })
 
+function PhotoVisual({ files, alt, imgY }) {
+  const urls = files.map(f => `/images/${encodeURIComponent(f)}`)
+
+  if (urls.length === 1) {
+    return (
+      <div className="panel-img-clip">
+        <motion.img
+          src={urls[0]}
+          alt={alt}
+          loading="lazy"
+          style={{ y: imgY }}
+          className="panel-img"
+        />
+      </div>
+    )
+  }
+
+  // two images: before/after split
+  return (
+    <div className="panel-img-pair">
+      {urls.map((url, i) => (
+        <div key={i} className="panel-img-clip panel-img-clip--half">
+          <motion.img
+            src={url}
+            alt={`${alt} ${i + 1}`}
+            loading="lazy"
+            style={{ y: imgY }}
+            className="panel-img"
+          />
+        </div>
+      ))}
+    </div>
+  )
+}
+
 export default function ProjectItem({ project, tr, lang, isEven }) {
   const ref = useRef(null)
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end start'] })
   const imgY = useTransform(scrollYProgress, [0, 1], ['4%', '-4%'])
 
   const category = tr.categories[project.category] || project.category
-  const fileUrl = `/images/${encodeURIComponent(project.file)}`
+  const fileUrl = `/images/${encodeURIComponent(project.files[0])}`
   const dir = isEven ? -1 : 1
 
   return (
     <article ref={ref} className={`panel${isEven ? ' panel--even' : ''}`}>
-      {/* ghost number */}
       <motion.span
         className="panel-ghost"
         aria-hidden="true"
@@ -42,19 +76,15 @@ export default function ProjectItem({ project, tr, lang, isEven }) {
         {project.id}
       </motion.span>
 
-      {/* visual block */}
+      {/* visual */}
       <div className="panel-perspective">
         <motion.div className="panel-visual" {...fold}>
           {project.type === 'photo' || project.type === 'image' ? (
-            <div className="panel-img-clip">
-              <motion.img
-                src={fileUrl}
-                alt={project.title[lang]}
-                loading="lazy"
-                style={{ y: imgY }}
-                className="panel-img"
-              />
-            </div>
+            <PhotoVisual
+              files={project.files}
+              alt={project.title[lang]}
+              imgY={imgY}
+            />
           ) : (
             <a
               href={fileUrl}
