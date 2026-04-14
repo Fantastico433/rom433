@@ -48,24 +48,32 @@ export default function ProjectItem({ project, tr, lang, isEven }) {
     <article className={`project project--pdf${evenClass}`}>
       <span className="project-ghost" aria-hidden="true">{project.id}</span>
 
-      <motion.div className="project-doc-wrap" {...fadeUp(0)}>
-        <div className="project-doc-card">
-          <div className="project-meta-top">
-            <span className="project-category">{category}</span>
-            <span className="project-year">{project.year}</span>
+      <motion.div className="project-pdf-wrap" {...fadeUp(0)}>
+        <object
+          className="project-pdf-embed"
+          data={fileUrl}
+          type="application/pdf"
+          aria-label={project.title[lang]}
+        >
+          {/* fallback kui browser ei toeta inline PDF-i */}
+          <div className="project-pdf-fallback">
+            <span>{project.title[lang]}</span>
           </div>
+        </object>
+      </motion.div>
 
-          <h2 className="project-title">{project.title[lang]}</h2>
-
-          <a
-            className="project-open"
-            href={fileUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {tr.open} ↗
-          </a>
-        </div>
+      <motion.div className="project-bottom-meta" {...fadeIn(0.18)}>
+        <h2 className="project-title">{project.title[lang]}</h2>
+        <span className="project-category">{category}</span>
+        <span className="project-year">{project.year}</span>
+        <a
+          className="project-open"
+          href={fileUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {tr.open} ↗
+        </a>
       </motion.div>
     </article>
   )
