@@ -238,35 +238,84 @@ button { background: none; border: none; cursor: pointer; font-family: inherit; 
 /* ── PDF / doc layout ── */
 
 .project--pdf {
-  min-height: 60vh;
+  min-height: 50vh;
+  overflow: visible;
 }
 
 .project-pdf-wrap {
-  width: clamp(280px, 72%, 960px);
+  width: fit-content;
 }
 
 .project--even .project-pdf-wrap {
   align-self: flex-end;
 }
 
-.project-pdf-embed {
+/* link wrapper — no underline, cursor handled by thumb */
+.pdf-thumb-link {
   display: block;
-  width: 100%;
-  height: clamp(400px, 60vh, 820px);
-  border: 1px solid rgba(15, 15, 13, 0.1);
-  background: #fff;
 }
 
-.project-pdf-fallback {
-  width: 100%;
-  height: clamp(400px, 60vh, 820px);
-  border: 1px solid rgba(15, 15, 13, 0.1);
+/* thumbnail container */
+.pdf-thumb {
+  display: inline-block;
+  position: relative;
+  cursor: zoom-in;
+  opacity: 0;
+  transition:
+    opacity 0.4s ease,
+    transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  transform-origin: left top;
+  box-shadow:
+    0 0 0 1px rgba(15, 15, 13, 0.1),
+    0 4px 24px rgba(15, 15, 13, 0.06);
+}
+
+.pdf-thumb--loaded {
+  opacity: 1;
+}
+
+.pdf-thumb-link:hover .pdf-thumb {
+  transform: scale(1.28);
+  box-shadow:
+    0 0 0 1px rgba(15, 15, 13, 0.1),
+    0 24px 80px rgba(15, 15, 13, 0.18);
+  z-index: 10;
+  position: relative;
+}
+
+/* react-pdf canvas */
+.pdf-thumb .react-pdf__Page {
+  display: block;
+}
+
+.pdf-thumb .react-pdf__Page canvas {
+  display: block;
+}
+
+/* loading skeleton */
+.pdf-thumb__skeleton {
+  width: 480px;
+  height: 680px;
+  background: linear-gradient(90deg, #ebebea 25%, #f2f2f0 50%, #ebebea 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite;
+}
+
+.pdf-thumb__error {
+  width: 480px;
+  height: 680px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--muted);
-  font-size: 0.75rem;
-  letter-spacing: 0.1em;
+  font-size: 1.5rem;
+  border: 1px solid rgba(15, 15, 13, 0.1);
+}
+
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
 }
 
 /* ── Shared meta ── */

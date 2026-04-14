@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import PdfThumbnail from './PdfThumbnail'
 
 const EASE = [0.16, 1, 0.3, 1]
 
@@ -49,17 +50,15 @@ export default function ProjectItem({ project, tr, lang, isEven }) {
       <span className="project-ghost" aria-hidden="true">{project.id}</span>
 
       <motion.div className="project-pdf-wrap" {...fadeUp(0)}>
-        <object
-          className="project-pdf-embed"
-          data={fileUrl}
-          type="application/pdf"
+        <a
+          href={fileUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="pdf-thumb-link"
           aria-label={project.title[lang]}
         >
-          {/* fallback kui browser ei toeta inline PDF-i */}
-          <div className="project-pdf-fallback">
-            <span>{project.title[lang]}</span>
-          </div>
-        </object>
+          <PdfThumbnail url={fileUrl} alt={project.title[lang]} />
+        </a>
       </motion.div>
 
       <motion.div className="project-bottom-meta" {...fadeIn(0.18)}>

@@ -41,4 +41,13 @@ function imagesPlugin() {
 
 export default defineConfig({
   plugins: [react(), imagesPlugin()],
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'pdf-vendor': ['react-pdf', 'pdfjs-dist'],
+        },
+      },
+    },
+  },
 })
