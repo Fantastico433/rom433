@@ -1,14 +1,22 @@
-import { motion } from 'framer-motion'
+import { motion, useScroll, useTransform } from 'framer-motion'
 
 const EASE = [0.16, 1, 0.3, 1]
 
 export default function Hero({ tr }) {
+  const { scrollY } = useScroll()
+
+  // name drifts up slower than scroll — parallax
+  const nameY = useTransform(scrollY, [0, 600], [0, -80])
+  // accent dot drifts faster + fades
+  const accentY = useTransform(scrollY, [0, 600], [0, -140])
+  const accentOpacity = useTransform(scrollY, [0, 400], [1, 0])
+
   return (
     <section className="hero">
-      {/* Bold element: large red accent dot, top-right */}
       <motion.div
         className="hero-accent"
         aria-hidden="true"
+        style={{ y: accentY, opacity: accentOpacity }}
         initial={{ opacity: 0, scale: 0.6 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1.2, delay: 0.5, ease: EASE }}
@@ -16,7 +24,6 @@ export default function Hero({ tr }) {
         ·
       </motion.div>
 
-      {/* Subtle horizontal rule — bold structural line */}
       <motion.div
         className="hero-rule"
         aria-hidden="true"
@@ -25,17 +32,16 @@ export default function Hero({ tr }) {
         transition={{ duration: 2, delay: 0.2, ease: EASE }}
       />
 
-      {/* Name — the core identity */}
       <motion.h1
         className="hero-name"
-        initial={{ opacity: 0, y: 50 }}
+        style={{ y: nameY }}
+        initial={{ opacity: 0, y: 60 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.4, ease: EASE }}
       >
         rom433
       </motion.h1>
 
-      {/* Role subtitle */}
       <motion.p
         className="hero-role"
         initial={{ opacity: 0 }}
@@ -45,7 +51,6 @@ export default function Hero({ tr }) {
         {tr.role}
       </motion.p>
 
-      {/* Scroll hint */}
       <motion.div
         className="hero-scroll"
         aria-hidden="true"

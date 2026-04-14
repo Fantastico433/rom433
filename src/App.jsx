@@ -3,6 +3,7 @@ import Header from './components/Header'
 import Hero from './components/Hero'
 import Work from './components/Work'
 import Footer from './components/Footer'
+import Cursor from './components/Cursor'
 import { translations } from './translations'
 
 export default function App() {
@@ -11,6 +12,7 @@ export default function App() {
 
   return (
     <>
+      <Cursor />
       <Header lang={lang} setLang={setLang} />
       <main>
         <Hero tr={tr} />

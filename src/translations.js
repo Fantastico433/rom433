@@ -1,6 +1,6 @@
 export const translations = {
   et: {
-    role: 'isehakanud fotograaf · juhuslik arendaja · harrastuslik disainer',
+    role: 'harrastusfotograaf · juhuslik arendaja · harrastuslik disainer',
     scrollHint: 'keri alla',
     work: 'Tööd',
     workCount: (n) => `${n} projekti`,
